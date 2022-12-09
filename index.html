@@ -1,0 +1,40 @@
+<head>
+  <script>
+    function toGame() {
+      game = document.getElementById('floatingInput').value;
+      console.log(game);
+      window.location.href = "http://localhost:5000/game/"+game;
+    }
+  </script>
+</head>
+
+{% extends 'base.html' %}
+
+{% block title %}
+Главная страничка
+{% endblock %}
+
+{% block body %}
+<div class="container">
+<body class="text-center">
+
+<main class="form-signin w-100 m-auto">
+
+    <h1 class="h3 mb-3 fw-normal">Введите название игры:</h1>
+
+    <div class="form-floating">
+      <input type="text" class="form-control" id="floatingInput" placeholder="Название">
+      <label for="floatingInput">Название</label>
+
+    </div>
+
+    <button class="w-100 btn btn-lg btn-primary" onclick="toGame()">Найти игру </button>
+
+
+
+    <p class="mt-5 mb-3 text-muted">©2022</p>
+</main>
+
+</body>
+</div>
+{% endblock %}
